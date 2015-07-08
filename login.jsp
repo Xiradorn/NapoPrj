@@ -6,21 +6,7 @@
     <meta name="viewport" content="widht=device-width, initial-scale=1">
     <title>Login Page</title>
     <link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
-    <style media="screen">
-        html, body {
-            background-color: #eee;
-        }
-        .xir {
-            padding: 30px;
-            display: block;
-            max-width: 300px;
-            margin: 10px auto;
-            background-color: white;
-            border: 1px solid #bbb;
-            border-radius: 5px;
-            box-shadow: 0 0 2px #bbb;
-        }
-    </style>
+    <link href="${pageContext.request.contextPath}/assets/css/custom.css" rel="stylesheet">
 </head>
 <body>
 
@@ -39,6 +25,9 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-default">Reset</button>
         </form>
+    </div>
+    <div class="container text-center">
+        <p class="copyright">Xir Napo <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
     </div>
 
     <script type="text/javascript" src="<%=request.getContextPath()%>/assets/jquery/jquery-1.11.3.js"></script>

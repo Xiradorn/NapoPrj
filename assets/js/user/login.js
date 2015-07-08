@@ -9,11 +9,11 @@ function validateusername() {
 
     if(!value) {
         $("#usernameError").css("display", "");
-        $("#usernameError").text("用户名不能为空！");
+        $("#usernameError").text("Valore vuoto non valido");
         bool=false;
     } else if (value.length < 3 || value.length > 20) {
         $("#usernameError").css("display", "");
-        $("#usernameError").text("用户名长度在3 ~ 20之间！");
+        $("#usernameError").text("Valore non valido o non compreso tra 3 e 20");
         bool=false;
     }
 
@@ -28,11 +28,11 @@ function validatepassword() {
     var value = $("#password").val();
     if(!value) {
         $("#passwordError").css("display", "");
-        $("#passwordError").text("密码不能为空！");
+        $("#passwordError").text("Valore vuoto non valido");
         bool = false;
     } else if (value.length < 3 || value.length > 20) {
         $("#passwordError").css("display", "");
-        $("#passwordError").text("密码长度在3 ~ 20之间！");
+        $("#passwordError").text("Valore non valido o non compreso tra 3 e 20");
         bool = false;
     }
 

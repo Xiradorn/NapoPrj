@@ -30,7 +30,7 @@
         <p class="copyright">Xir Napo <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
     </div>
 
-    <script type="text/javascript" src="<%=request.getContextPath()%>/assets/jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/user/login.js"></script>
 </body>
 </html>

@@ -15,7 +15,15 @@ html, body {
 .xir_tables {
     max-width: 1000px
 }
-
+.btn-xir {
+    background-color: #222;
+    color: #9d9d9d;
+    border-color: #9d9d9d;
+    transition: all 200ms ease-in-out;
+}
+.btn-xir:hover, .btn-xir:focus {
+    background-color: #000;
+}
 .xir-no-res {
     width: 1000px;
 }

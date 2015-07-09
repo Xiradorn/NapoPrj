@@ -50,7 +50,7 @@
                 <input type="password" name="loginUser.username" id="password" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary btn-xir">Submit</button>
             <button type="reset" class="btn btn-default">Reset</button>
         </form>
     </div>

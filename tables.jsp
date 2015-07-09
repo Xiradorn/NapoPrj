@@ -91,12 +91,12 @@
                     mtype: "GET",
                     datatype: "json",
                     colModel: [
-                        { label: 'OrderID', name: 'OrderID', key: true, width: 155, editable: true, editrules : { required: true} },
-     					{ label: 'Customer ID', name: 'CustomerID', width: 70, editable: true, editrules : { required: true} },
+                        { label: 'OrderID', name: 'OrderID', key: true, width: 160, editable: true, editrules : { required: true} },
+     					{ label: 'Customer ID', name: 'CustomerID', width: 160, editable: true, editrules : { required: true} },
                         {
                             label: 'Order Date',
                             name: 'OrderDate',
-                            width: 150,
+                            width: 160,
                             editable: true,
                             edittype:"text",
                             editoptions: {
@@ -116,17 +116,17 @@
                         {
     						label: 'Freight',
     						name: 'Freight',
-    						width: 150,
+    						width: 160,
     						formatter: 'number',
     						summaryTpl : "<b>{0}</b>",
     						summaryType: "sum"
     					},
-                        { label: 'Employee ID', name: 'EmployeeID', width: 150 }
+                        { label: 'Employee ID', name: 'EmployeeID', width: 160 }
                     ],
     				loadonce:true,
     				viewrecords: true,
     				rowList: [20,30,50,100],
-                    width: 780,
+                    width: 850,
                     height: 250,
                     rowNum: 20,
     				sortname: 'OrderDate',

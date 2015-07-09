@@ -1,3 +1,8 @@
+<% /**
+* NapoXir Tables.jsp
+* @author: Sir Xiradorn
+*/
+%>
 <% /* qua ci va messo qualche cosa forse il login o altro per controllare la pagina. Poi vedi stesso tu */ %>
 <% String pageName = "NapoXir - Table Scheduling"; %>
 <!DOCTYPE html>
@@ -19,7 +24,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/jquery-ui-1.10.0.bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/ui.jqgrid-bootstarp.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/custom.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/nopoxir.custom.css" />
     <style type="text/css">
         #gbox_jqGrid {
             margin: 20px auto !important;
@@ -29,23 +34,36 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
+        <div class="container xir-no-res">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><% out.print(pageName); %></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/tables.jsp"><% out.print(pageName); %></a>
             </div>
-        </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="${pageContext.request.contextPath}/login.jsp">Login</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/tables.jsp">Tables <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container xir xir_tables">
+    <div class="container xir xir_tables xir-no-res">
         <h2 class="text-center"><% out.print(pageName); %></h2>
-        <h4 class="text-center">Just a simple table for now</h4>
+        <h4 class="text-center">Reporting Table with Ordering, Editing and Adding Functions</h4>
 
         <table id="jqGrid"></table>
         <div id="jqGridPager"></div>
     </div>
 
-    <div class="container text-center">
+    <div class="container text-center xir-no-res">
         <p class="copyright"><% out.print(pageName); %> <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
     </div>
         <script type="text/javascript">

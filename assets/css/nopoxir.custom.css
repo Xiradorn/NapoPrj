@@ -15,3 +15,7 @@ html, body {
 .xir_tables {
     max-width: 1000px
 }
+
+.xir-no-res {
+    width: 1000px;
+}

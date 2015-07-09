@@ -1,6 +1,9 @@
 /**
-* Funzioni di supporto del login.jsp
+* NapoXir Login.jsp
+* @author: Sir Xiradorn
 */
+
+/*** Funzioni di supporto del login.jsp */
 
 // validazione username
 function validateusername() {

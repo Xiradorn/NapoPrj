@@ -2,4 +2,9 @@
 
 Per ora sono completi:
  * login.jsp
- * login.js
+  * login.js
+ * tables.jsp
+  * data.json
+
+Prossimi da fare
+ * user.jsp

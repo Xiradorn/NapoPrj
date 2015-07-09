@@ -1,9 +1,9 @@
 <% /* qua ci va messo qualche cosa forse il login o altro per controllare la pagina. Poi vedi stesso tu */ %>
+<% String pageName = "NapoXir - Table Scheduling"; %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The jQuery library is a prerequisite for all jqSuite products -->
     <script type="text/ecmascript" src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
     <script type="text/ecmascript" src="${pageContext.request.contextPath}/assets/js/jquery-ui.min.js"></script>
@@ -25,12 +25,20 @@
             margin: 20px auto !important;
         }
     </style>
-    <title>Tabelle</title>
+    <title><% out.print(pageName); %></title>
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><% out.print(pageName); %></a>
+            </div>
+        </div>
+    </nav>
 
     <div class="container xir xir_tables">
-        <h2 class="text-center">Scheduling Tables</h2>
+        <h2 class="text-center"><% out.print(pageName); %></h2>
         <h4 class="text-center">Just a simple table for now</h4>
 
         <table id="jqGrid"></table>
@@ -38,7 +46,7 @@
     </div>
 
     <div class="container text-center">
-        <p class="copyright">Xir Napo <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
+        <p class="copyright"><% out.print(pageName); %> <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
     </div>
         <script type="text/javascript">
 

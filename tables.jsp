@@ -48,8 +48,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="${pageContext.request.contextPath}/login.jsp">Login</a></li>
-                    <li class="active"><a href="${pageContext.request.contextPath}/tables.jsp">Tables <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/tables.jsp">Tables</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="${pageContext.request.contextPath}/login.jsp">Login <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">User List</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">User Menager</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -162,5 +174,7 @@
             });
 
         </script>
+
+        <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
 </body>
 </html>

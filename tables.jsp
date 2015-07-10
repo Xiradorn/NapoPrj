@@ -87,7 +87,7 @@
     			template += "<div> Date: </div><div>{OrderDate} </div>";
                 /* Inizializza Tabella */
                 $("#jqGrid").jqGrid({
-                    url: 'json/data.json',
+                    url: "json/data.json",
                     mtype: "GET",
                     datatype: "json",
                     colModel: [
@@ -200,7 +200,7 @@
             // the ID of the grid tow  and the primary key of the row
             function showChildGrid(parentRowID, parentRowKey) {
                 $.ajax({
-                    url: "json/"+parentRowKey+".html",
+                    url: "json/subreports/"+parentRowKey+".html",
                     type: "GET",
                     success: function (html) {
                         $("#" + parentRowID).append(html);

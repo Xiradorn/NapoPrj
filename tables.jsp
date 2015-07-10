@@ -76,7 +76,7 @@
     </div>
 
     <div class="container text-center xir-no-res">
-        <p class="copyright"><% out.print(pageName); %> <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
+        <p class="copyright"><% out.print(pageName); %> <span class="glyphicon glyphicon-copyright-mark"></span> 2015 - Sir Xiradorn &lt; <a href="http://xiradorn.it" alt="Xiradorn Lab">xiradorn.it</a> &gt;</p>
     </div>
         <script type="text/javascript">
 

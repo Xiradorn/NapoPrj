@@ -9,6 +9,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widht=device-width, initial-scale=1, user-scalable=no">
     <!-- The jQuery library is a prerequisite for all jqSuite products -->
     <script type="text/ecmascript" src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
     <script type="text/ecmascript" src="${pageContext.request.contextPath}/assets/js/jquery-ui.min.js"></script>
@@ -25,6 +27,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/jquery-ui-1.10.0.bootstrap.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/ui.jqgrid-bootstarp.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/nopoxir.custom.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/nopoxir.noresponsive.css" />
     <style type="text/css">
         #gbox_jqGrid {
             margin: 20px auto !important;
@@ -76,7 +79,7 @@
     </div>
 
     <div class="container text-center xir-no-res">
-        <p class="copyright"><% out.print(pageName); %> <span class="glyphicon glyphicon-copyright-mark"></span> 2015 - Sir Xiradorn &lt; <a href="http://xiradorn.it" alt="Xiradorn Lab">xiradorn.it</a> &gt;</p>
+        <p class="copyright"><% out.print(pageName); %> <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
     </div>
         <script type="text/javascript">
 
@@ -87,7 +90,7 @@
     			template += "<div> Date: </div><div>{OrderDate} </div>";
                 /* Inizializza Tabella */
                 $("#jqGrid").jqGrid({
-                    url: "json/data.json",
+                    url: 'json/data.json',
                     mtype: "GET",
                     datatype: "json",
                     colModel: [
@@ -99,19 +102,6 @@
                             width: 160,
                             editable: true,
                             edittype:"text",
-                            searchoptions: {
-                            // dataInit is the client-side event that fires upon initializing the toolbar search field for a column
-                            // use it to place a third party control to customize the toolbar
-                                dataInit: function (element) {
-                                    $(element).datepicker({
-                                        id: 'orderDate_datePicker',
-                                        dateFormat: 'yy-mm-dd',
-                                        minDate: new Date(2000, 0, 1),
-                                        maxDate: new Date(2150, 0, 1),
-                                        showOn: 'focus'
-                                    });
-                                }
-                            },
                             editoptions: {
                             // dataInit is the client-side event that fires upon initializing the toolbar search field for a column
                             // use it to place a third party control to customize the toolbar
@@ -119,8 +109,8 @@
                                     $(element).datepicker({
                                         id: 'orderDate_datePicker',
                                         dateFormat: 'yy-mm-dd',
-                                        minDate: new Date(2000, 0, 1),
-                                        maxDate: new Date(2150, 0, 1),
+                                        minDate: new Date(2010, 0, 1),
+                                        maxDate: new Date(2020, 0, 1),
                                         showOn: 'focus'
                                     });
                                 }
@@ -143,15 +133,8 @@
                     height: 250,
                     rowNum: 20,
     				sortname: 'OrderDate',
-                    subGrid: true, // set the subGrid property to true to show expand buttons for each row
-                    subGridRowExpanded: showChildGrid, // javascript function that will take care of showing the child grid
-    			    subGridOptions : {
-    					// configure the icons from theme rolloer
-    					plusicon: "ui-icon-triangle-1-e",
-    					minusicon: "ui-icon-triangle-1-s",
-    					openicon: "ui-icon-arrowreturn-1-e"
-    				},
-                    grouping: false,
+                    pager: "#jqGridPager",
+                    grouping: true,
                     groupingView: {
                         groupField: ["OrderDate"],
                         groupColumnShow: [true],
@@ -160,14 +143,11 @@
                         groupSummary: [true],
     					groupSummaryPos: ['footer'],
                         groupCollapse: false
-                    },
-                    pager: "#jqGridPager",
-                    caption: "Controll Table Page"
+                    }
                 });
 
                 /* Inizializza Tasti */
-                $('#jqGrid').jqGrid('filterToolbar');
-                $('#jqGrid').jqGrid('navGrid','#jqGridPager',
+                $('#jqGrid').navGrid('#jqGridPager',
                 // the buttons to appear on the toolbar of the grid
                 { edit: true, add: true, del: true, search: true, refresh: true, view: true, position: "left", cloneToTop: true },
                 {
@@ -196,17 +176,6 @@
                 });
             });
 
-            // the event handler on expanding parent row receives two parameters
-            // the ID of the grid tow  and the primary key of the row
-            function showChildGrid(parentRowID, parentRowKey) {
-                $.ajax({
-                    url: "json/subreports/"+parentRowKey+".html",
-                    type: "GET",
-                    success: function (html) {
-                        $("#" + parentRowID).append(html);
-                    }
-                });
-            }
         </script>
 
         <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/bootstrap.min.js"></script>
